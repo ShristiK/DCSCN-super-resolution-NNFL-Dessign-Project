@@ -1,14 +1,31 @@
 # Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network
 
-by ##Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
+## Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
+
+[Project Presentation](https://github.com/akashpalrecha/Lookahead/blob/master/Project%20Presentation.pdf)
 
 ## Overview
 
-This is a tensorflow implementation of ["Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network"](https://arxiv.org/abs/1707.05425), a deep learning based Single-Image Super-Resolution (SISR) model. We named it **DCSCN**.
+This is animplementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network", a deep learning based Single-Image Super-Resolution (SISR) model.
 
-The model structure is like below. We use Deep CNN with Residual Net, Skip Connection and Network in Network. A combination of Deep CNNs and Skip connection layers is used as a feature extractor for image features on both local and global area. Parallelized 1x1 CNNs, like the one called Network in Network, is also used for image reconstruction.
+The DCSCN model consists of the following 2 parts : 
+
+## Feature Extraction Network
+## Image Detail Reconstruction Network
+
+In the Feature Extraction Network part 7 sets of 3x3 CNN, bias and Parametric ReLU units are cascaded. Each output of the units is passed to the next unit and simultaneously skipped to the reconstruction network. Parametric ReLu is used to solve “Dying ReLu “ problem as it prevents weights from learning a large negative bias term and leads to better performance.
+
+The Image reconstruction network consists of 2 parallelized CNN blocks which are concatenated together. The first consists of 1x1 convolution layer with PRelu and the second consists of a 1x1 layer followed by a 3x3 layer with PRelu as Activation function. After this  a 1x1 CNN layer is added. 1x1 CNNs are used to reduce the input dimension  before generating the high resolution  pixels
+
+Below is an image showing the complete DCSCN model structure.
 
 <img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1.jpeg" width="800">
+
+## Requirements and Environment Setup
+
+python > 3.5
+
+tensorflow > 1.0, scipy, numpy and pillow
 
 
 ## Sample result
@@ -21,11 +38,6 @@ Our model, DCSCN is much lighter than other Deep Learning based SISR models. Her
 <img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/compare.png" width="600">
 
 
-## Requirements
-
-python > 3.5
-
-tensorflow > 1.0, scipy, numpy and pillow
 
 
 ## Result of PSNR
@@ -117,14 +129,3 @@ python augmentation.py --dataset yang91 --augment_level 8
 python train.py --dataset yang91_4
 ```
 
-
-
-## Visualization
-
-During the training, tensorboard log is available. You can use "--save_weights True" to add histogram and stddev logging of each weights. Those are logged under **tf_log** directory.
-
-<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/model.png" width="400">
-
-Also we log average PSNR of traing and testing, and then generate csv and plot files under **graphs** directory. Please note training PSNR contains dropout factor so it will be less than test PSNR. This graph is from training our compact version of DCSCN.
-
-<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/graph.png" width="400">
