@@ -1,31 +1,14 @@
 # Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network
 
-## Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
-
-[Project Presentation](https://github.com/akashpalrecha/Lookahead/blob/master/Project%20Presentation.pdf)
+by ##Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
 
 ## Overview
 
-This is animplementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network", a deep learning based Single-Image Super-Resolution (SISR) model.
+This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. We named it **DCSCN**.
 
-The DCSCN model consists of the following 2 parts : 
-
-## Feature Extraction Network
-## Image Detail Reconstruction Network
-
-In the Feature Extraction Network part 7 sets of 3x3 CNN, bias and Parametric ReLU units are cascaded. Each output of the units is passed to the next unit and simultaneously skipped to the reconstruction network. Parametric ReLu is used to solve “Dying ReLu “ problem as it prevents weights from learning a large negative bias term and leads to better performance.
-
-The Image reconstruction network consists of 2 parallelized CNN blocks which are concatenated together. The first consists of 1x1 convolution layer with PRelu and the second consists of a 1x1 layer followed by a 3x3 layer with PRelu as Activation function. After this  a 1x1 CNN layer is added. 1x1 CNNs are used to reduce the input dimension  before generating the high resolution  pixels
-
-Below is an image showing the complete DCSCN model structure.
+The model structure is like below. We use Deep CNN with Residual Net, Skip Connection and Network in Network. A combination of Deep CNNs and Skip connection layers is used as a feature extractor for image features on both local and global area. Parallelized 1x1 CNNs, like the one called Network in Network, is also used for image reconstruction.
 
 <img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1.jpeg" width="800">
-
-## Requirements and Environment Setup
-
-python > 3.5
-
-tensorflow > 1.0, scipy, numpy and pillow
 
 
 ## Sample result
@@ -38,31 +21,26 @@ Our model, DCSCN is much lighter than other Deep Learning based SISR models. Her
 <img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/compare.png" width="600">
 
 
+## Requirements
+
+python > 3.5
+
+tensorflow > 1.0, scipy, numpy and pillow
 
 
 ## Result of PSNR
 
-The sample result of default parameter is here. You can have even better PSNR than below with using larger filters or deeper layers with our model.
-
-| DataSet | Bicubic | SRCN | SelfEx | DRCN | VDSR | DCSCN (compact) | DCSCN (normal) | DCSCN (large) |
-|:-------:|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|Set5   x2|33.66|36.66|36.49|37.63|37.53|37.13|37.62|37.72|
-|Set14  x2|30.24|32.42|32.22|33.04|33.03|32.71|33.05|33.15|
-|BSD100 x2|29.56|31.36|31.18|31.85|31.90|31.59|31.91|32.03|
 
 ## Result of SSIM
 
-| DataSet | Bicubic | SRCN | SelfEx | DRCN | VDSR | DCSCN (compact) | DCSCN (normal) | DCSCN (large) |
-|:-------:|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|Set5   x2|0.9299|0.9542|0.9537|0.9588|0.9587|0.9569|0.9590|0.9589|
-|Set14  x2|0.8688|0.9063|0.9034|0.9118|0.9124|0.9090|0.9126|0.9133|
-|BSD100 x2|0.8431|0.8879|0.8855|0.8942|0.8960|0.8905|0.8956|0.8966|
 
-## Evaluate
+## Instructions to Run
 
-Learned weights for some parameters are included in this GitHub. Execute **evaluate.py** with these args below and you get results in **output** directory. When you want to evaluate with other parameters, try training first then evaluate with same parameters as training have done. Results will be logged at log.txt, please check.
+## Data Augmentation
+Execute the following command on dataset of your own choice. Three data augmentation techniques have been implemented in aug.py
 
-Three pre-trained models (compact, normal, large) are included.
+. Execute **evaluate.py** with these args below and you get results in **output** directory. When you want to evaluate with other parameters, try training first then evaluate with same parameters as training have done. Results will be logged at log.txt, please check.
+
 
 ```
 # evaluating set14 dataset with normal model
@@ -129,3 +107,14 @@ python augmentation.py --dataset yang91 --augment_level 8
 python train.py --dataset yang91_4
 ```
 
+
+
+## Visualization
+
+During the training, tensorboard log is available. You can use "--save_weights True" to add histogram and stddev logging of each weights. Those are logged under **tf_log** directory.
+
+<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/model.png" width="400">
+
+Also we log average PSNR of traing and testing, and then generate csv and plot files under **graphs** directory. Please note training PSNR contains dropout factor so it will be less than test PSNR. This graph is from training our compact version of DCSCN.
+
+<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/graph.png" width="400">
