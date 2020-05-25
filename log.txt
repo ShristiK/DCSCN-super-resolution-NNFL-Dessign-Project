@@ -1,0 +1,16 @@
+
+DCSCN -------------------------------------
+2020/5/25 12:57:49 [dcscn_L10_F196to48_G1.20_NIN_A64_BI_D0.80_prelu_yang_bsd_8_L3]
+From /Users/rachitrathore/opt/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+From /Users/rachitrathore/Desktop/dcscn-ver1/DCSCN.py:188: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Feature:196 172 153 136 120 105 90 75 61 48  Total: (1156) Complexity:1,329,111 Receptive Fields:21
+evaluate model performance
+From /Users/rachitrathore/opt/anaconda3/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+
+=== Average [DIV2K] PSNR:30.859353, SSIM:0.912433 ===
