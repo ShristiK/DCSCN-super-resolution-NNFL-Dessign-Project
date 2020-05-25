@@ -46,10 +46,14 @@ Our keras.py file creates the model using keras with structure as mentioned in t
 ## Instructions to Run
 
 ## Data Augmentation
-Data Augmentation is achieved using 3 techniques of flipping, rotating and zooming an image. Below is a sample example of output after augmentation on an input image.
+Execute the following command on dataset of your own choice. Three data augmentation techniques have been implemented in data_aug_keras.py. The augemented dataset can be found in **data/new_augmented_dataset** folder.
 
-<img src = "">
 
+```
+# generated augmented dataset
+python data-aug-keras.py --dir='path of dataset-of-your-own-choice'
+
+```
 
 
 ## How to train
