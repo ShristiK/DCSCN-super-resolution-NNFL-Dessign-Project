@@ -39,7 +39,7 @@ The first consists of 1x1 convolution layer with PRelu and the second consists o
 
 Below is a figure showing DCSCN the model structure.
 
-<img src = "https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/compare.png" width="600">
+<img src = "https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1.jpeg" width="800">
 
 ## Instructions to Run
 
