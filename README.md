@@ -2,7 +2,7 @@
 
 ## Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
 
-[Project Presentation] (https://github.com/ShristiK/DCSCN-super-resolution-NNFL-Dessign-Project/blob/master/NNFL%20Design%20Project.pdf)
+[Project Presentation](https://github.com/ShristiK/DCSCN-super-resolution-NNFL-Dessign-Project/blob/master/NNFL%20Design%20Project.pdf)
 
 ## Overview
 
