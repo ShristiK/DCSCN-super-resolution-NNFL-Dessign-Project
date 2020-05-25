@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. DCSCN model provides state-of-the-art performance with 10 times lower computation cost using parallelized 1x1 CNNs which not only reduces the dimensions of the previous layer for faster computation with less information loss, but also adds more nonlinearity to enhance the potential representation of the network.**Single Image Super-Resolution (SISR)** is used in many fields like security video surveillance and medical imaging, video playing, websites display.
+This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. DCSCN model provides state-of-the-art performance with 10 times lower computation cost using parallelized 1x1 CNNs which not only reduces the dimensions of the previous layer for faster computation with less information loss, but also adds more nonlinearity to enhance the potential representation of the network. **Single Image Super-Resolution (SISR)** is used in many fields like security video surveillance and medical imaging, video playing, websites display.
 
 ## Requirements
 
@@ -23,8 +23,9 @@ For training purpose, publicly available datasets are taken and the distribution
 
 The DCSCN model consists of the following 2 parts : 
 
-** 1.Feature Extraction Network**
-** 2.Image Detail Reconstruction Network**
+**1.Feature Extraction Network**
+
+**2.Image Detail Reconstruction Network**
 
 In the Feature Extraction Network part 7 sets of 3x3 CNN, bias and Parametric ReLU units are cascaded. Each output of the units is passed to the next unit and simultaneously skipped to the reconstruction network.
 Parametric ReLu is used to solve “Dying ReLu “ problem as it prevents weights from learning a large negative bias term and leads to better performance.
