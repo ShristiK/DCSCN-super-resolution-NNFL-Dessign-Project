@@ -10,11 +10,14 @@ This is an implementation of "Fast and Accurate Image Super Resolution by Deep C
 
 The DCSCN model consists of the following 2 parts : 
 
-## Feature Extraction Network
-## Image Detail Reconstruction Network
+### Feature Extraction Network
+### Image Detail Reconstruction Network
 
+The Feature Extraction Network part consists of 7 sets of 3x3 CNN, bias and Parametric ReLU units. Each output of the units is passed to the next unit and simultaneously skipped to the reconstruction network. Parametric ReLu is used to solve “Dying ReLu “ problem as it prevents weights from learning a large negative bias term and leads to better performance. The Image reconstruction network consists of 2 parallelized CNN blocks which are concatenated together. The first consists of 1x1 convolution layer with PRelu and the second consists of a 1x1 layer followed by a 3x3 layer with PRelu as Activation function. After this  a 1x1 CNN layer is added. 1x1 CNNs are used to reduce the input dimension  before generating the high resolution  pixels.
 
-<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1.jpeg" width="800">
+The image below shows the DCSCN model structure.
+
+<img src="">
 
 
 ## Sample result
