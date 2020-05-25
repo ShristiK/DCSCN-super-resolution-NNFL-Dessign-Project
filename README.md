@@ -1,12 +1,18 @@
 # Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network
 
-by ##Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
+## Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
+
+[Project Presentation]()
 
 ## Overview
 
-This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. We named it **DCSCN**.
+This is an implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model.
 
-The model structure is like below. We use Deep CNN with Residual Net, Skip Connection and Network in Network. A combination of Deep CNNs and Skip connection layers is used as a feature extractor for image features on both local and global area. Parallelized 1x1 CNNs, like the one called Network in Network, is also used for image reconstruction.
+The DCSCN model consists of the following 2 parts : 
+
+## Feature Extraction Network
+## Image Detail Reconstruction Network
+
 
 <img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1.jpeg" width="800">
 
