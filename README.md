@@ -29,12 +29,11 @@ numpy
 ## Instructions to Run
 
 ## Data Augmentation
-Execute the following command on dataset of your own choice. Three data augmentation techniques have been implemented in data_aug_keras.py. The augemented dataset can be found in **data/new_augmented_dataset** folder.
+Execute the following command on dataset of your own choice. Three data augmentation techniques have been implemented in data_augmentation_keras.py. The augemented dataset can be found in **data/new_augmented_dataset** folder.
 
 
 ```
-# generated augmented dataset
-python data-aug-keras.py --dir='path of dataset-of-your-own-choice'
+python data_augmentation_keras.py --dir='path of dataset-of-your-own-choice'
 
 ```
 
