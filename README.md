@@ -1,6 +1,6 @@
 # Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network
 
-by Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
+by ##Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
 
 ## Overview
 
