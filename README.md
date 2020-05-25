@@ -6,13 +6,7 @@
 
 ## Overview
 
-This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. We named it **DCSCN**.
-
-The model structure is like below. The paper uses Deep CNN with Residual Net, Skip Connection and Network in Network. A combination of Deep CNNs and Skip connection layers is used as a feature extractor for image features on both local and global area. Parallelized 1x1 CNNs, like the one called Network in Network, is also used for image reconstruction.
-
-<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1.jpeg" width="800">
-
-
+This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. DCSCN model provides state-of-the-art performance with 10 times lower computation cost using parallelized 1x1 CNNs which not only reduces the dimensions of the previous layer for faster computation with less information loss, but also adds more nonlinearity to enhance the potential representation of the network.**Single Image Super-Resolution (SISR)** is used in many fields like security video surveillance and medical imaging, video playing, websites display.
 
 ## Requirements
 
@@ -22,9 +16,25 @@ scipy 1.1.0
 pillow
 numpy
 
+## Data
+For training purpose, publicly available datasets are taken and the distribution is 91 images from Yang  and 200 images from the Berkeley Segmentation Dataset
 
+## Model Structure
 
+The DCSCN model consists of the following 2 parts : 
 
+** 1.Feature Extraction Network**
+** 2.Image Detail Reconstruction Network**
+
+In the Feature Extraction Network part 7 sets of 3x3 CNN, bias and Parametric ReLU units are cascaded. Each output of the units is passed to the next unit and simultaneously skipped to the reconstruction network.
+Parametric ReLu is used to solve “Dying ReLu “ problem as it prevents weights from learning a large negative bias term and leads to better performance.
+The Image reconstruction network consists of 2 parallelized CNN blocks which are concatenated together
+The first consists of 1x1 convolution layer with PRelu and the second consists of a 1x1 layer followed by a 3x3 layer with PRelu as Activation function. After this  a 1x1 CNN layer is added
+1x1 CNNs are used to reduce the input dimension  before generating the high resolution  pixels.
+
+Below is a figure showing DCSCN the model structure.
+
+<img src = "">
 
 ## Instructions to Run
 
