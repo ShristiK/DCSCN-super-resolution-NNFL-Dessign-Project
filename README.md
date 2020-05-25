@@ -6,19 +6,19 @@
 
 ## Overview
 
-This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. DCSCN model provides state-of-the-art performance with 10 times lower computation cost using parallelized 1x1 CNNs which not only reduces the dimensions of the previous layer for faster computation with less information loss, but also adds more nonlinearity to enhance the potential representation of the network. **Single Image Super-Resolution (SISR)** is used in many fields like security video surveillance and medical imaging, video playing, websites display.
+This is implementation of **"Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network"** a deep learning based Single-Image Super-Resolution (SISR) model. DCSCN model provides state-of-the-art performance with 10 times lower computation cost using parallelized 1x1 CNNs which not only reduces the dimensions of the previous layer for faster computation with less information loss, but also adds more nonlinearity to enhance the potential representation of the network. **Single Image Super-Resolution (SISR)** is used in many fields like security video surveillance and medical imaging, video playing, websites display.
 
 ## Requirements
 
-python >=3.5
+1. python >=3.5
 
-tensorflow 1.13.1
+2. tensorflow 1.13.1
 
-scipy 1.1.0
+3. scipy 1.1.0
 
-pillow
+4. pillow
 
-numpy
+5. numpy
 
 ## Data
 For training purpose, publicly available datasets are taken and the distribution is 91 images from Yang  and 200 images from the Berkeley Segmentation Dataset
@@ -44,13 +44,10 @@ Below is a figure showing DCSCN the model structure.
 ## Instructions to Run
 
 ## Data Augmentation
-Execute the following command on dataset of your own choice. Three data augmentation techniques have been implemented in data_augmentation_keras.py. The augemented dataset can be found in **data/new_augmented_dataset** folder.
+Data Augmentation is achieved using 3 techniques of flipping, rotating and zooming an image. Below is a sample example of output after augmentation on an input image.
 
+<img src = "">
 
-```
-python data_augmentation_keras.py --dir='path of dataset-of-your-own-choice'
-
-```
 
 
 ## How to train
