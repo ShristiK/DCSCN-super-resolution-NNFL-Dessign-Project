@@ -41,6 +41,8 @@ Below is a figure showing DCSCN the model structure.
 
 <img src = "https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1.jpeg" width="800">
 
+Our keras.py file creates the model using keras with structure as mentioned in the paper.
+
 ## Instructions to Run
 
 ## Data Augmentation
