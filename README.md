@@ -11,9 +11,13 @@ This is implementation of "Fast and Accurate Image Super Resolution by Deep CNN 
 ## Requirements
 
 python >=3.5
+
 tensorflow 1.13.1
+
 scipy 1.1.0
+
 pillow
+
 numpy
 
 ## Data
@@ -23,9 +27,9 @@ For training purpose, publicly available datasets are taken and the distribution
 
 The DCSCN model consists of the following 2 parts : 
 
-**1.Feature Extraction Network**
+**1. Feature Extraction Network**
 
-**2.Image Detail Reconstruction Network**
+**2. Image Detail Reconstruction Network**
 
 In the Feature Extraction Network part 7 sets of 3x3 CNN, bias and Parametric ReLU units are cascaded. Each output of the units is passed to the next unit and simultaneously skipped to the reconstruction network.
 Parametric ReLu is used to solve “Dying ReLu “ problem as it prevents weights from learning a large negative bias term and leads to better performance.
@@ -35,7 +39,7 @@ The first consists of 1x1 convolution layer with PRelu and the second consists o
 
 Below is a figure showing DCSCN the model structure.
 
-<img src = "">
+<img src = "https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/compare.png" width="600">
 
 ## Instructions to Run
 
