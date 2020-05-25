@@ -6,9 +6,9 @@
 
 ## Overview
 
-This is an implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based Single-Image Super-Resolution (SISR) model. A highly efficient and faster Single Image Super-Resolution (SISR) model with Deep Convolutional neural networks (Deep CNN) is proposed in the paper which achieves state-of-the-art performance at 10 times lower computation cost. Single Image Super-Resolution (SISR) is used in many fields like security video surveillance and medical imaging, video playing, websites display.
+This is an implementation of "Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network" a deep learning based **Single-Image Super-Resolution (SISR)** model. A highly efficient and faster Single Image Super-Resolution (SISR) model with Deep Convolutional neural networks (Deep CNN) is proposed in the paper which achieves state-of-the-art performance at 10 times lower computation cost. Single Image Super-Resolution (SISR) is used in many fields like security video surveillance and medical imaging, video playing, websites display.
 
-The current Single Image Super Resolution models involve large computations and are not suitable for network edge devices like mobile, tablet and IoT devices.DCSCN model provides state-of-the-art performance with 10 times lower computation cost using parallelized 1x1 CNNs which not only reduces the dimensions of the previous layer for faster computation with less information loss, but also adds more nonlinearity to enhance the potential representation of the network
+The current Single Image Super Resolution models involve large computations and are not suitable for network edge devices like mobile, tablet and IoT devices. DCSCN model provides state-of-the-art performance with 10 times lower computation cost using parallelized 1x1 CNNs which not only reduces the dimensions of the previous layer for faster computation with less information loss, but also adds more nonlinearity to enhance the potential representation of the network
 
 ## Requirements and Environment setup
 
@@ -51,13 +51,6 @@ The image below shows the DCSCN model structure.
 
 
 ## Sample result
-
-<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/result.png" width="864">
-
-
-Our model, DCSCN is much lighter than other Deep Learning based SISR models. Here is a comparison chart of performance vs computation complexity from our paper.
-
-<img src="https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/compare.png" width="600">
 
 ### Result of PSNR
 
