@@ -1,6 +1,8 @@
 # Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network
 
-by ##Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
+## Shristi Kumari (2016B4A70574P), Akriti Garg(2016B4A70480P)
+
+[Project Presentation] (https://github.com/ShristiK/DCSCN-super-resolution-NNFL-Dessign-Project/blob/master/NNFL%20Design%20Project.pdf)
 
 ## Overview
 
